@@ -10,16 +10,4 @@ python tracking/train.py \
   --mode single \
   --nproc_per_node 1
 
-for epoch in 45
-do
-  python ./RGBT_workspace/test_rgbt_mgpus.py \
-    --script_name cpetrack \
-    --yaml_name deep_rgbt_256 \
-    --dataset_name LasHeR \
-    --epoch "$epoch" \
-    --threads 4 \
-    --num_gpus 1 \
-    --mode sequential
-done
-
 
