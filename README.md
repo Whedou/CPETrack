@@ -6,13 +6,13 @@ The main components are:
 
 - **Pixel Expert Bank (PEB):** constructs complementary RGB-T pixel experts and aligned expert tokens.
 - **Input Pixel Fusion (IPF):** combines pixel experts before the single-stream backbone.
-- **Template- and Text-guided Token-wise Expert Injection (TTEI):** routes expert tokens into intermediate search features using template cues and optional text cues.
+- **Template- and Text-guided Token-wise Expert Injection (TTEI):** routes expert tokens into intermediate search features using template cues and text cues.
 
 The implementation retains parts of the [STTrack](https://arxiv.org/abs/2412.15691) training and testing framework. STTrack's published results are not CPETrack results.
 
 ## Setup
 
-Create a Python environment and review `install_cpetrack.sh` for dependencies appropriate to your CUDA system. Dataset paths in `lib/train/admin/local.py` and `lib/test/evaluation/local.py`, plus the pretrained-weight and text-cache paths in the model builder and experiment YAML files, contain machine-specific defaults that should be adjusted before use.
+Create a Python environment and install dependencies via `install_cpetrack.sh` according to your CUDA version. Modify the local dataset, pretrained weight and text cache paths in configuration files before running the code.
 
 ## Training
 
@@ -30,8 +30,6 @@ For LasHeR, adjust the dataset root in `RGBT_workspace/test_rgbt_mgpus.py` and r
 ```bash
 python RGBT_workspace/test_rgbt_mgpus.py --script_name cpetrack --yaml_name deep_rgbt_256 --dataset_name LasHeR --epoch 45 --threads 4 --num_gpus 1
 ```
-
-New checkpoints use `output/checkpoints/train/cpetrack/<config>/CPETrack_epXXXX.pth.tar`. 
 
 ## Acknowledgment
 
