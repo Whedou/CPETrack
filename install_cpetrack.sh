@@ -72,9 +72,5 @@ echo ""
 echo "****************** Installing vot-toolkit python ******************"
 pip install git+https://github.com/votchallenge/vot-toolkit-python
 
-echo "****************** Installing mamba ******************"
-cd ./mamba_install/causal-conv1d && pip install . && cd ../.. # recommended to use sudo
-cd ./mamba_install/mamba-1p1p1 && pip install . && cd ../..  # recommended to use sudo
-cd ./mamba_install/selective_scan && pip install . && cd ../.. # recommended to use sudo
 
 echo "****************** Installation complete! ******************"
