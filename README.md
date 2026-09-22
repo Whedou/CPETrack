@@ -22,7 +22,6 @@ The experiment configurations are in `experiments/cpetrack/`. For the default RG
 python tracking/train.py --script cpetrack --config deep_rgbt_256 --save_dir ./output --mode single --nproc_per_node 1
 ```
 
-`train_vtuav.sh` currently tests and evaluates VTUAV-ST checkpoints; it does not start training.
 
 ## Testing
 
@@ -32,7 +31,7 @@ For LasHeR, adjust the dataset root in `RGBT_workspace/test_rgbt_mgpus.py` and r
 python RGBT_workspace/test_rgbt_mgpus.py --script_name cpetrack --yaml_name deep_rgbt_256 --dataset_name LasHeR --epoch 45 --threads 4 --num_gpus 1
 ```
 
-New checkpoints use `output/checkpoints/train/cpetrack/<config>/CPETrack_epXXXX.pth.tar`. The test parameter loader also accepts an existing checkpoint in the previous `sttrack/STTrack_epXXXX.pth.tar` location when no new-format checkpoint is present.
+New checkpoints use `output/checkpoints/train/cpetrack/<config>/CPETrack_epXXXX.pth.tar`. 
 
 ## Acknowledgment
 
